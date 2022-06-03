@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
+import PokemonCard from '../PokemonCard/PokemonCard'
+
 import './PokemonList.styles.scss'
 
 const PokemonList = () => {
@@ -33,13 +35,11 @@ const PokemonList = () => {
         const pokemonIndex = p + 1
 
         return (
-          <li key={pokemon.name}>
-            <img
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`}
-              alt=""
-            />
-            {pokemon.name}
-          </li>
+          <PokemonCard
+            key={pokemon.name}
+            name={pokemon.name}
+            index={pokemonIndex}
+          />
         )
       })}
     </ul>
