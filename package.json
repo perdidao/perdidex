@@ -1,12 +1,11 @@
 {
-  "name": "bundler",
+  "name": "perdidex",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "source": "src/index.html",
   "scripts": {
     "dev": "parcel",
-    "build": "parcel --public-url ./"
+    "build": "parcel build --public-url ./"
   },
   "dependencies": {
     "axios": "^0.27.2",
