@@ -8,7 +8,6 @@ import './PokemonList.styles.scss'
 const PokemonList = () => {
   const [loading, setLoading] = useState(true)
   const [pokemons, setPokemons] = useState({})
-  const [filtered, setFiltered] = useState({})
 
   useEffect(() => {
     if (pokemons.length) return

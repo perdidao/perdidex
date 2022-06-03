@@ -1,13 +1,17 @@
 .PokemonCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border-radius: vw(5);
   padding: vw(20);
   padding-top: vw(10);
   background-color: rgba(255, 255, 255, 0.02);
   position: relative;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
 
   &__index {
     display: flex;

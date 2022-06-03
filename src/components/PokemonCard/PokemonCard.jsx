@@ -1,19 +1,19 @@
+import { Link } from 'react-router-dom'
 import './PokemonCard.styles.scss'
+import { sanitizeName } from '../../helpers/text'
 
 const PokemonCard = (props) => {
   const { name, index, thumb } = props
 
-  const sanitizeName = (name) => {
-    return name.replace('-', ' ')
-  }
-
   return (
     <li className="PokemonCard">
-      <span className="PokemonCard__index">{index}</span>
-      <figure className="PokemonCard__image">
-        <img src={thumb} alt={sanitizeName(name)} loading="lazy" />
-      </figure>
-      <p className="PokemonCard__name">{sanitizeName(name)}</p>
+      <Link to={`/${name}`} className="PokemonCard__link">
+        <span className="PokemonCard__index">{index}</span>
+        <figure className="PokemonCard__image">
+          <img src={thumb} alt={sanitizeName(name)} loading="lazy" />
+        </figure>
+        <span className="PokemonCard__name">{sanitizeName(name)}</span>
+      </Link>
     </li>
   )
 }

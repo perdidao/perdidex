@@ -1,0 +1,24 @@
+.Pokemon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &-stat {
+    &__bar {
+      width: vw(120);
+      height: vw(20);
+      position: relative;
+      background-color: rgba(255,255,255,.05);
+      border-radius: vw(10);
+      overflow: hidden;
+    }
+
+    &__base {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: $primary;
+    }
+  }
+}
