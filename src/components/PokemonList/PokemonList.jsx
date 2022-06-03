@@ -10,12 +10,21 @@ const PokemonList = () => {
   const [pokemons, setPokemons] = useState({})
 
   useEffect(() => {
-    if (pokemons.length) return
+    const cachedPokemons = localStorage.getItem('pokemon-list')
+    if (cachedPokemons) {
+      setPokemons(JSON.parse(cachedPokemons))
+      setLoading(false)
+      return
+    }
 
     axios
-      .get('https://pokeapi.co/api/v2/pokemon?limit=150')
+      .get('https://pokeapi.co/api/v2/pokemon?limit=765')
       .then((response) => {
         setPokemons(response.data.results)
+        localStorage.setItem(
+          'pokemon-list',
+          JSON.stringify(response.data.results)
+        )
       })
       .catch((err) => {
         throw err
@@ -30,19 +39,21 @@ const PokemonList = () => {
   }
 
   return (
-    <ul className="PokemonList">
-      {pokemons.map((pokemon, p) => {
-        const pokemonIndex = p + 1
+    <section>
+      <ul className="PokemonList">
+        {pokemons.map((pokemon, p) => {
+          const pokemonIndex = p + 1
 
-        return (
-          <PokemonCard
-            key={pokemon.name}
-            name={pokemon.name}
-            index={pokemonIndex}
-          />
-        )
-      })}
-    </ul>
+          return (
+            <PokemonCard
+              key={pokemon.name}
+              name={pokemon.name}
+              index={pokemonIndex}
+            />
+          )
+        })}
+      </ul>
+    </section>
   )
 }
 

@@ -13,12 +13,11 @@ const PokemonCard = (props) => {
       <figure className="PokemonCard__image">
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`}
-          alt=""
+          alt={sanitizeName(name)}
+          loading="lazy"
         />
       </figure>
-      <p className="PokemonCard__name">
-        {sanitizeName(name)}
-      </p>
+      <p className="PokemonCard__name">{sanitizeName(name)}</p>
     </li>
   )
 }
