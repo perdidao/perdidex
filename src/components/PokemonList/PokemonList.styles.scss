@@ -1,6 +1,23 @@
 .PokemonList {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-gap: vw(20);
   padding: vw(20);
+
+  &__filter {
+    display: block;
+    width: vw(530);
+    height: vw(50);
+    margin-bottom: vw(20);
+    border-radius: vw(5);
+    padding: 0 vw(10);
+    background: rgba(255, 255, 255, 0.1);
+    border: 0;
+    font-family: $font-family;
+    font-size: font-size(18);
+    color: $title;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: vw(20);
+  }
 }

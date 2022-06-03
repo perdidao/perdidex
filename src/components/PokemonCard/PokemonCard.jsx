@@ -1,7 +1,7 @@
 import './PokemonCard.styles.scss'
 
 const PokemonCard = (props) => {
-  const {name, index} = props
+  const { name, index, thumb } = props
 
   const sanitizeName = (name) => {
     return name.replace('-', ' ')
@@ -11,11 +11,7 @@ const PokemonCard = (props) => {
     <li className="PokemonCard">
       <span className="PokemonCard__index">{index}</span>
       <figure className="PokemonCard__image">
-        <img
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`}
-          alt={sanitizeName(name)}
-          loading="lazy"
-        />
+        <img src={thumb} alt={sanitizeName(name)} loading="lazy" />
       </figure>
       <p className="PokemonCard__name">{sanitizeName(name)}</p>
     </li>
