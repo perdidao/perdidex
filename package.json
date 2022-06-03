@@ -1,0 +1,27 @@
+{
+  "name": "bundler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel --public-url ./"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "prettier": "^2.6.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "sass": "^1.52.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.6.0",
+    "buffer": "^6.0.3",
+    "eslint": "^8.16.0",
+    "parcel": "^2.6.0",
+    "process": "^0.11.10"
+  }
+}

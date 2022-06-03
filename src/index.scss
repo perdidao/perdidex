@@ -1,0 +1,16 @@
+@import 'styles/reset';
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap');
+@import 'styles/variables';
+
+* {
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: $black;
+  color: $text;
+  font-family: $font-family;
+  font-size: 14px;
+}
